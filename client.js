@@ -462,7 +462,7 @@ async function startScreenShare() {
 // Show the share URL popup
 function showShareUrlPopup() {
     const shareUserId = userId || roomId.replace('room_', '');
-    const shareUrl = `https://gamble-galaxy.com/screen_share_viewer.php?userId=0&username=Viewer&targetUser=${shareUserId}`;
+    const shareUrl = `https://octav8.app/screen_share_viewer.html?userId=0&username=Viewer&targetUser=${shareUserId}`;
     
     // Create popup/modal
     const modal = document.createElement('div');
@@ -528,7 +528,7 @@ function showShareUrlPopup() {
         </div>
         <div style="background: rgba(91, 95, 223, 0.1); padding: 12px; border-radius: 8px; margin-bottom: 20px; border-left: 3px solid #5b5fdf;">
             <p style="color: #90caf9; margin: 0; font-size: 13px;">
-                💡 <strong>Tip:</strong> This link will also appear on your Gamble Galaxy profile automatically!
+                💡 <strong>Tip:</strong> Anyone with this link can watch on Octav8 — no login needed.
             </p>
         </div>
         <div style="text-align: center;">
