@@ -1,0 +1,25 @@
+{
+  "name": "screen-share-app",
+  "version": "1.0.0",
+  "description": "WebRTC Screen Sharing Application with Bidirectional Audio",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "webrtc",
+    "screen-sharing",
+    "websocket",
+    "video",
+    "audio"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^8.14.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
