@@ -1,8 +1,10 @@
 // WebSocket and WebRTC configuration
-// Auto-detect WebSocket URL based on current page location
-const WS_URL = window.location.protocol === 'https:' 
-    ? `wss://${window.location.host}` 
-    : `ws://${window.location.host}`;
+// Mobile-safe WebSocket URL detection
+function getWebSocketUrl() {
+    return window.location.protocol === 'https:'
+        ? 'wss://' + window.location.host
+        : 'ws://' + window.location.host;
+}
 
 const ICE_SERVERS = {
     iceServers: [
@@ -113,9 +115,22 @@ function connectToRoom() {
         return;
     }
 
-    // Connect to WebSocket server
-    console.log('Connecting to:', WS_URL);
-    ws = new WebSocket(WS_URL);
+   // Connect to WebSocket server
+const socketUrl = getWebSocketUrl();
+
+console.log('Connecting to:', socketUrl);
+
+try {
+    ws = new WebSocket(socketUrl);
+} catch (error) {
+    console.error('Could not create WebSocket:', error);
+    alert(
+        'WebSocket Error\n\n' +
+        'Could not create connection to screen server.\n\n' +
+        'Details: ' + error.message
+    );
+    return;
+}
 
     ws.onopen = () => {
         console.log('Connected to signaling server');
